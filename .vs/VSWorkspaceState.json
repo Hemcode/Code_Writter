@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\C:\\Users\\KARIM\\Source\\Repos\\Code_Writter",
+  "SelectedNode": "\\src\\main.py",
   "PreviewInSolutionExplorer": false
 }
