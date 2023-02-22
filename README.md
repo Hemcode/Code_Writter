@@ -5,4 +5,4 @@ Code Writter is a simple Text Editor create for C / C++ in 2023.
 *It's a footage*
 There's basics options like files, settings, GIT and the terminal (Shell).
 
-Thanks for read this file, if you want support me, try Code Writter (When I'll finish the project). It's an open-source program.
+Thanks for read this file, if you want support us, try Code Writter (When we'll finish the project). It's an open-source program.
