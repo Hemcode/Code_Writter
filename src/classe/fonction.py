@@ -1,5 +1,7 @@
 from tkinter import *
 
+# Function for take the file name
+
 # Function for open a pop-up to chose the file to open.
 def pop_up_for_open_file():
     pop_up = Tk()
@@ -15,7 +17,7 @@ def pop_up_for_open_file():
     path_register.pack()
 
     # Show the pop-up
-    pop_up_frame.pack(expand=YES)
+    pop_up_frame.pack(expand=YES, fill=Y, fill=X)
     pop_up.mainloop()
 
 
