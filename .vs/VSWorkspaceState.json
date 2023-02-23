@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\assets"
+    "\\src\\classe"
   ],
-  "SelectedNode": "\\src\\main.py",
+  "SelectedNode": "\\src\\classe\\fonction.py",
   "PreviewInSolutionExplorer": false
 }
