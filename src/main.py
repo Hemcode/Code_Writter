@@ -10,6 +10,8 @@ grey: str = "#6e6e6e"
 dark_grey: str = "#393939"
 very_dark_grey: str = "#1a1c20"
 
+font_tuple = ("Corrier", 11)
+
 
 # Window
 window = Tk()
@@ -36,11 +38,17 @@ folder_project_name = Label(files_explore_top, text="Project Name", bg=grey, fon
 folder_project_name.pack(expand=YES)
 
 # Window Top's options
-window_top_option_1 = Button(window_top, text="FILES", font=("Courrier", 11),bg=very_dark_grey, fg="white", command=pop_up_for_open_file)
+window_top_option_1 = Button(window_top, text="FILES", font=font_tuple,bg=very_dark_grey, fg="white", command=pop_up_for_open_file)
 window_top_option_1.pack(side=LEFT, padx=25)
 
-window_top_option_2 = Button(window_top, text="SETTINGS", font=("Courrier", 11), bg=very_dark_grey, fg="white", command="")
+window_top_option_2 = Button(window_top, text="SETTINGS", font=font_tuple, bg=very_dark_grey, fg="white", command="")
 window_top_option_2.pack(side=LEFT, padx=25)
+
+window_top_option_3 = Button(window_top, text="GIT", font=font_tuple, bg=very_dark_grey, fg="white", command=we_are_sorry)
+window_top_option_3.pack(side=LEFT, padx=25)
+
+window_top_option_4 = Button(window_top, text="TERMINAL", font=font_tuple, bg=very_dark_grey, fg="white", command=we_are_sorry)
+window_top_option_4.pack(side=LEFT, padx=25)
 
 
 # show elements
