@@ -1,6 +1,13 @@
 from tkinter import *
 
 # Function for take the file name
+def get_file_name(file_path: str):
+    # Split the file path with '\\'
+    file_name = file_path.split("\\")
+
+    # Return the last word
+    return file_name[-1]
+
 
 # Function for open a pop-up to chose the file to open.
 def pop_up_for_open_file():
@@ -13,21 +20,21 @@ def pop_up_for_open_file():
     path_entry = Entry(pop_up_frame, font=("Courrier", 25), bg="#1a1c20") # Very dark grey
     path_entry.pack()
 
-    path_register = Button(pop_up_frame, text="Entrer the file's path for open it", command="")
+    path_register = Button(pop_up_frame, text="Entrer the file's path for open it", bg="#48577d", fg="white")
     path_register.pack()
 
     # Show the pop-up
-    pop_up_frame.pack(expand=YES, fill=Y, fill=X)
+    pop_up_frame.pack(expand=YES)
     pop_up.mainloop()
 
 
 # Fuction for open a file
-""" For Later
+
+# For Later
+
+""" 
 def open_file(file_name: str):
-    file_object = open(file_name, "r+")
-
-    text_entry_for_code = Entry()
-
-    for lignes in file_object:
-        return lignes
+    with open(file_name, "r+") as file_object:
+        for lines in file_object:
+            return lines
 """
