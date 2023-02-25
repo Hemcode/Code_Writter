@@ -9,11 +9,14 @@ def open_file(file_name: str, window: Tk):
     
     entry_frame = Frame(window, bg="#393939") # Dark Grey
 
-    file_entry = Entry(entry_frame, font=("Corrier", 12))
+    file_entry = Entry(entry_frame, font=("Corrier", 12), fg="black")
+    file_entry.pack()
+
+    entry_frame.pack(expand=YES)
 
 
 # Function for open a pop-up to chose the file to open.
-def pop_up_for_open_file():
+def pop_up_for_open_file(window: Tk):
     pop_up = Tk()
     pop_up.title("Chose a file")
     pop_up.config(bg="#6e6e6e") # Grey
@@ -23,7 +26,7 @@ def pop_up_for_open_file():
     path_entry = Entry(pop_up_frame, font=("Courrier", 25), bg="#1a1c20") # Very dark grey
     path_entry.pack()
 
-    path_register = Button(pop_up_frame, text="Entrer the file's path for open it", bg="#48577d", fg="white", command=open_file(path_entry))
+    path_register = Button(pop_up_frame, text="Entrer the file's path for open it", bg="#48577d", fg="white", command=open_file(path_entry, window))
     path_register.pack()
 
     # Show the pop-up

@@ -10,7 +10,7 @@ grey: str = "#6e6e6e"
 dark_grey: str = "#393939"
 very_dark_grey: str = "#1a1c20"
 
-font_tuple = ("Corrier", 11)
+font_tuple: tuple = ("Corrier", 11)
 
 
 # Window
