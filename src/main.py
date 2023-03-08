@@ -1,10 +1,10 @@
+"""The main file in this project"""
+
 from tkinter import *
 
 # importantion of other files
-from classe.file import File
-from classe.folder import Folder
-from classe.fonction import *
- 
+from include.file import File as fi
+
 # Variable
 grey: str = "#6e6e6e"
 dark_grey: str = "#393939"
@@ -17,7 +17,9 @@ font_tuple: tuple = ("Corrier", 11)
 window = Tk()
 
 window.title("Code Writter")
+
 window.config(bg=grey)
+
 window.minsize(480, 360)
 window.geometry("1080x720")
 
@@ -28,30 +30,27 @@ files_explore_top = Frame(files_explore, bg=very_dark_grey)
 files_explore_top.pack(side=TOP)
 
 
-# Window Top
-window_top = Frame(window, bg=very_dark_grey)
-
 # Labels / Buttons
 
 # Folder Project Name
 folder_project_name = Label(files_explore_top, text="Project Name", bg=grey, font=("Courrier", 18))
 folder_project_name.pack(expand=YES)
 
-# Window Top's options
-window_top_option_1 = Button(window_top, text="FILES", font=font_tuple,bg=very_dark_grey, fg="white", command=pop_up_for_open_file)
-window_top_option_1.pack(side=LEFT, padx=25)
+# shows elements
 
-window_top_option_2 = Button(window_top, text="SETTINGS", font=font_tuple, bg=very_dark_grey, fg="white", command="")
-window_top_option_2.pack(side=LEFT, padx=25)
+# Window Top
+window_top_menu_bar = Menu(window)
+window_top_element_1 = Menu(window_top_menu_bar, tearoff=0, font=("Courrier", 12))
+window_top_element_1.add_command(label="Open a file")
 
-window_top_option_3 = Button(window_top, text="GIT", font=font_tuple, bg=very_dark_grey, fg="white", command=we_are_sorry)
-window_top_option_3.pack(side=LEFT, padx=25)
+window_top_element_2 = Menu(window_top_menu_bar, tearoff=0, font=("Courrier", 12))
+window_top_element_2.add_command(label="Settings")
 
-window_top_option_4 = Button(window_top, text="TERMINAL", font=font_tuple, bg=very_dark_grey, fg="white", command=we_are_sorry)
-window_top_option_4.pack(side=LEFT, padx=25)
+window_top_menu_bar.add_cascade(label="Files", menu=window_top_element_1)
+window_top_menu_bar.add_cascade(label="Settings", menu=window_top_element_2)
 
+# Confugure
+window.config(bg=grey, menu=window_top_menu_bar)
 
-# show elements
 files_explore.pack(side=LEFT, fill=Y)
-window_top.pack(side=TOP, fill=X)
 window.mainloop()
