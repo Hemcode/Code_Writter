@@ -38,7 +38,7 @@ folder_project_name.pack(expand=YES)
 
 # shows elements
 
-# Window Top
+# Window's menu
 menu_bar = Menu(window)
 menu_first_option = Menu(menu_bar, tearoff=0, font=("Courrier", 12))
 menu_first_option.add_command(label="Open a file")
