@@ -39,18 +39,18 @@ folder_project_name.pack(expand=YES)
 # shows elements
 
 # Window Top
-window_top_menu_bar = Menu(window)
-window_top_element_1 = Menu(window_top_menu_bar, tearoff=0, font=("Courrier", 12))
-window_top_element_1.add_command(label="Open a file")
+menu_bar = Menu(window)
+menu_first_option = Menu(menu_bar, tearoff=0, font=("Courrier", 12))
+menu_first_option.add_command(label="Open a file")
 
-window_top_element_2 = Menu(window_top_menu_bar, tearoff=0, font=("Courrier", 12))
-window_top_element_2.add_command(label="Settings")
+menu_second_option = Menu(menu_bar, tearoff=0, font=("Courrier", 12))
+menu_second_option.add_command(label="Settings")
 
-window_top_menu_bar.add_cascade(label="Files", menu=window_top_element_1)
-window_top_menu_bar.add_cascade(label="Settings", menu=window_top_element_2)
+menu_bar.add_cascade(label="Files", menu=menu_first_option)
+menu_bar.add_cascade(label="Settings", menu=menu_second_option)
 
 # Confugure
-window.config(bg=grey, menu=window_top_menu_bar)
+window.config(bg=grey, menu=menu_bar)
 
 files_explore.pack(side=LEFT, fill=Y)
 window.mainloop()
