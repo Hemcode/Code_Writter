@@ -3,14 +3,42 @@
 from tkinter import *
 
 # importantion of other files
-from include.file import File as fi
+from file import File as fi
+
+# functions
+def open_file():
+    global FONT
+    global grey
+    global dark_grey
+    global very_dark_grey
+
+    path_entry_pop_up = Tk()
+    path_entry_pop_up.config(bg=dark_grey)
+    path_entry_pop_up.geometry("360x240")
+    path_entry_pop_up.resizable(width=False, height=False)
+
+    path_entry_pop_up_frame = Frame(path_entry_pop_up, bg=dark_grey)
+
+    path_entry = Entry(path_entry_pop_up_frame, font=FONT, bg=very_dark_grey)
+    path_entry.pack()
+
+    def take_file_name() -> str:
+        global path_entry
+        return path_entry.get()
+
+    button_entry = Button(path_entry_pop_up_frame, text="Open file", bg=grey, command=take_file_name)
+    button_entry.pack()
+
+    path_entry_pop_up_frame.pack(expand=YES)
+    path_entry_pop_up.mainloop()
 
 # Variable
 grey: str = "#6e6e6e"
 dark_grey: str = "#393939"
 very_dark_grey: str = "#1a1c20"
 
-font_tuple: tuple = ("Corrier", 11)
+# Font
+FONT: tuple = ("Corrier", 12)
 
 
 # Window
@@ -22,7 +50,6 @@ window.config(bg=grey)
 
 window.minsize(480, 360)
 window.geometry("1080x720")
-
 
 # Files
 files_explore = Frame(window, bg=dark_grey)
@@ -41,7 +68,7 @@ folder_project_name.pack(expand=YES)
 # Window's menu
 menu_bar = Menu(window)
 menu_first_option = Menu(menu_bar, tearoff=0, font=("Courrier", 12))
-menu_first_option.add_command(label="Open a file")
+menu_first_option.add_command(label="Open a file", command=open_file)
 
 menu_second_option = Menu(menu_bar, tearoff=0, font=("Courrier", 12))
 menu_second_option.add_command(label="Settings")
