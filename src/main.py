@@ -3,7 +3,8 @@
 from tkinter import *
 
 # importantion of other files
-from file import File as fi
+from openFile import File as fi
+from openFolder import Folder as fl
 
 # functions
 def open_file():
@@ -22,12 +23,14 @@ def open_file():
     path_entry = Entry(path_entry_pop_up_frame, font=FONT, bg=very_dark_grey)
     path_entry.pack()
 
-    def take_file_name() -> str:
-        global path_entry
-        return path_entry.get()
-
-    button_entry = Button(path_entry_pop_up_frame, text="Open file", bg=grey, command=take_file_name)
+    button_entry = Button(path_entry_pop_up_frame, text="Open file", bg=grey, command=path_entry.get)
     button_entry.pack()
+
+    file_name_path = path_entry.get().split("\\")
+
+    file_name: str = file_name_path[-1]
+
+    file_for_edit = fi(file_name=file_name)
 
     path_entry_pop_up_frame.pack(expand=YES)
     path_entry_pop_up.mainloop()
